@@ -230,7 +230,7 @@ class FixedVariantSelector(
         val variant = candidates.variants.first()
         val spec = transforms.get(variant.attributes.asImmutable())
         return when (spec) {
-            null -> variant.artifacts // was no mapping for extension
+            null -> ResolvedArtifactSet.EMPTY // was no mapping for extension
             is EmptyMapping -> ResolvedArtifactSet.EMPTY
             is IdentityMapping -> variant.artifacts
             is TransformMapping -> factory.asTransformed(variant, spec.targetAttributes, spec.transformation, EmptyDependenciesResolverFactory(fileCollectionFactory), transformedVariantFactory)
