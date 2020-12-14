@@ -80,6 +80,11 @@ class AttributeMatchingVariantSelector implements VariantSelector {
     }
 
     @Override
+    public boolean isNoRequestedAttributes() {
+        return requested.isEmpty();
+    }
+
+    @Override
     public ResolvedArtifactSet select(ResolvedVariantSet producer, Factory factory) {
         try {
             return doSelect(producer, factory, AttributeMatchingExplanationBuilder.logging());
