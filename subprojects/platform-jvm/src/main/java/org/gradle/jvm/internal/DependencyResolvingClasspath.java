@@ -222,8 +222,8 @@ public class DependencyResolvingClasspath extends AbstractOpaqueFileCollection {
         public void finishArtifacts() {
             artifactsResults = artifactsBuilder.complete().select(Specs.satisfyAll(), new VariantSelector() {
                 @Override
-                public boolean isNoRequestedAttributes() {
-                    return false;
+                public ImmutableAttributes getRequestedAttributes() {
+                    throw new UnsupportedOperationException();
                 }
 
                 @Override

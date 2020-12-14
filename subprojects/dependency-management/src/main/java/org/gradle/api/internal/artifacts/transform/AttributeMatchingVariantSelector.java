@@ -80,8 +80,8 @@ class AttributeMatchingVariantSelector implements VariantSelector {
     }
 
     @Override
-    public boolean isNoRequestedAttributes() {
-        return requested.isEmpty();
+    public ImmutableAttributes getRequestedAttributes() {
+        return requested;
     }
 
     @Override

@@ -29,7 +29,7 @@ public interface VariantSelector {
      */
     ResolvedArtifactSet select(ResolvedVariantSet candidates, Factory factory);
 
-    boolean isNoRequestedAttributes();
+    ImmutableAttributes getRequestedAttributes();
 
     interface Factory {
         ResolvedArtifactSet asTransformed(ResolvedVariant sourceVariant, ImmutableAttributes targetAttributes, Transformation transformation, ExtraExecutionGraphDependenciesResolverFactory dependenciesResolver, TransformedVariantFactory transformedVariantFactory);
